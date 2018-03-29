@@ -1,0 +1,497 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Compensation Suite</title>
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <!-- navbar    -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="home.html">Home</a>
+                    <a class="nav-item nav-link" href="about.html">About</a>
+                  </div>
+                </div>
+              </nav>
+
+        <br>
+
+        <div class="container">
+        <!-- jumbotron -->
+            <div class="jumbotron jumbotron-fluid text-center">
+                <div class="container">
+                    <h1 class="display-4">IBM Compensation Suite</h1>
+                </div>
+            </div>
+          
+        <!-- buttons -->
+            <div class="row text-center">
+                <div class="col-md-6 mb-3">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#calculatorModal">Co-op Salary Calculator</button>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#compensationModal">Lookup Compensation Tool</button>
+                </div>
+                <div class="col-md-6 mb-3">    
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#conversionModal">Pay Rate Conversion Tool</button>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#validationModal">Sales Plan Validation</button>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#universityModal">University Rates</button>
+                </div>  
+            </div>
+          </div>
+      
+
+        <br>
+<!-- footer -->
+    <div class="fixed-bottom p-3 bg-primary text-center">
+        
+    </div>
+
+
+<!-- modals -->
+    <!-- calculator modal -->
+    <div class="modal fade calculatorModal-modal-lg" id="calculatorModal" tabindex="-1" role="dialog" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="calculatorModalLabel">Co-op Salary Calculator</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <h5>Candidate Name:</h5>
+                  <input type="name" class="form-control" id="name" name="name">
+              </div>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="Education">Education Level</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="educationRadio" id="pre-freshman" value="Pre-Freshman" checked>
+                      <label class="form-check-label" for="pre-freshman">Pre-Freshman </label>                        
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="educationRadio" id="undergraduate" value="Undergraduate">
+                      <label class="form-check-label" for="undergraduate">Undergraduate </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="educationRadio" id="graduate" value="Graduate">
+                      <label class="form-check-label" for="graduate">Graduate </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="educationRadio" id="phd" value="PhD">
+                      <label class="form-check-label" for="phd">PhD</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                    <label for="formerIbm">Former IBM Co-op ?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formerRadio" value="yes" id="yesFormer">
+                      <label class="form-check-label" for="yesFormer">Yes </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formerRadio" value="no" id="noFormer" checked>
+                      <label class="form-check-label" for="noFormer">No</label>
+                    </div>
+                  </div>
+        
+                  <div class="form-group col-md-3">
+                      <label for="formerIbm">GBS ?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gbsRadio" value="yes" id="yesGbs">
+                      <label class="form-check-label" for="yesGbs">Yes </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gbsRadio" value="no" id="noGbs" checked>                        <label class="form-check-label" for="noGbs">No</label>
+                    </div>
+                  </div>
+                </div> <!--end form-row-->
+                <hr>
+                <h5>Enter Credits</h5>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="completed">Completed</label>
+                    <input type="text" class="form-control" id="credCompleted" name="credCompleted">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="required">Required</label>
+                    <input type="text" class="form-control" id="credRequired" name="credRequired">
+                </div> <!--end form-row-->
+                  <div class="form-group col-md-4">
+                    <label for="percentage">%</label>
+                    <input type="text" class="form-control" id="credPercent" name="credPercent">
+                  </div>
+                </div> <!-- end form-row -->
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="managerAdd">Optional Manager Adder</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="checkManager">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <input type="text" class="form-control" id="percentManager" name="percentManager">
+                  </div>
+                </div> <!-- end form-row -->
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="studentStat">Student Status</label>
+                  </div>
+                  <div class="form-group col-md-8">
+                    <input type="text" class="form-control" id="studentStatus" name="studentStatus">
+                  </div>
+                </div> <!-- end form-row -->
+                <div class="form-row justify-content-end">
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary" disabled>Special</button>
+                    <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
+                  </div>
+                </div><!--end form-row-->
+                <hr>
+                <h5>Student Pay Rate</h5>
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="techBlue">Extreme Blue/Research</label>
+                  </div>
+                  <div class="form-group col-md-7">
+                    <input type="text" class="form-control" id="extremeBlue" name="techExtremeBlue">
+                  </div>
+                </div> <!-- end form-row -->
+
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="noTechBlue">Technical</label>
+                  </div>
+                  <div class="form-group col-md-7">
+                    <input type="text" class="form-control" id="technical" name="noExtremeBlue">
+                  </div>
+                </div> <!-- end form-row -->
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="noTech">Non-Technical</label>
+                  </div>
+                  <div class="form-group col-md-7">
+                    <input type="text" class="form-control" id="nonTech" name="nonTech">
+                  </div>
+                </div> <!-- end form-row -->
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="global">Delivery Services</label>
+                  </div>
+                  <div class="form-group col-md-7">
+                    <input type="text" class="form-control" id="deliveryservices" name="globalBusiness">
+                  </div>
+                </div> <!-- end form-row -->
+            </div><!--end modal-body-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Summary</button>
+              <button type="reset" class="btn btn-primary">Clear</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- compensation modal -->
+<div class="modal fade bd-modal-lg" id="compensationModal" tabindex="-1" role="dialog" aria-labelledby="compensationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="compensationModalLabel">Lookup Compensation Tool</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="jobFamily">Job Family</label>
+                    <select class="form-control mb-1" id="jobFamily">
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                    </select>
+                  <label for="city">City</label>
+                    <select class="form-control mb-1" id="city">
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                    </select>
+                  <label for="state">State</label>
+                    <select class="form-control mb-1" id="state">
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                    </select>
+                  <label for="band">Band</label>
+                    <input type="text" class="form-control mb-1" id="band" aria-describedby="bandHelp" placeholder="Enter band">
+                  <label for="payCorridor">Pay Corridor</label>
+                    <input type="text" class="form-control mb-1" id="payCorridor" aria-describedby="payCorridorHelp" placeholder="Enter Pay Corridor">
+                  <label for="payZone">Pay Zone</label>
+                    <input type="text" class="form-control mb-1" id="payZone" aria-describedby="payZoneHelp" placeholder="Enter Pay Zone">
+                  </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="">
+                    <h5 class="col-md-12">Expro (paid monthly)</h5>
+                      <div class="col-md-6 float-left">
+                        <p class="m-2">Minimum</p>
+                        <p class="m-2">Value Point</p>
+                        <p class="m-2">Maximum</p>
+                      </div>
+                      <div class="col-md-6 float-right">
+                          <input type="text" class="form-control m-1" id="band" aria-describedby="bandHelp" placeholder="Enter Minimum">
+                          <input type="text" class="form-control m-1" id="payCorridor" aria-describedby="payCorridorHelp" placeholder="Enter Value Point">
+                          <input type="text" class="form-control m-1" id="payZone" aria-describedby="payZoneHelp" placeholder="Enter Maximum">
+                      </div>
+                    </div>
+                  <div class"col-md-12">
+                    <div class="">
+                    <h5 class="">LTS (paid monthly)</h5>
+                      <div class="col-md-6 float-left">
+                        <p class="m-2">Minimum</p>
+                        <p class="m-2">Maximum</p>
+                      </div>
+                      <div class="col-md-6 float-right">
+                        <input type="text" class="form-control m-1" id="ltsMinimum" aria-describedby="ltsMinimumHelp" placeholder="Enter Minimum">
+                        <input type="text" class="form-control m-1" id="ltsMaximum" aria-describedby="ltsMaximumHelp" placeholder="Enter Maximum">
+                      </div>
+                    </div>
+                  </div>
+                    <div class"col-md-12">
+                      <div class="">
+                      <h5 class="">STS (paid daily)</h5>
+                        <div class="col-md-6 float-left">
+                          <p class="m-2">Minimum</p>
+                          <p class="m-2">Maximum</p>
+                        </div>
+                        <div class="col-md-6 float-right">
+                          <input type="text" class="form-control m-1" id="stsMinimum" aria-describedby="stsMinimumHelp" placeholder="Enter Minimum">
+                          <input type="text" class="form-control m-1" id="stsMaximum" aria-describedby="stsMaximumHelp" placeholder="Enter Maximum">
+                        </div>
+                        </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Search</button>
+              <button type="button" class="btn btn-primary">Clear</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Exit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- conversion modal -->
+<div class="modal fade bd-modal-lg" id="conversionModal" tabindex="-1" role="dialog" aria-labelledby="conversionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="conversionModalLabel">Pay Rate Conversion Tool</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-8" id="jobType">
+                  <h5>Job Type</h5>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="regularRadio" value="option1">
+                        <label class="form-check-label" for="regularRadio">Regular</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="shortTermRadio" value="option2">
+                        <label class="form-check-label" for="shortTermRadio">Short-Term Supplemental</label>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="co-opRadio" value="option3">
+                        <label class="form-check-label" for="co-opRadio">Co-op</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="longTermRadio" value="option4">
+                        <label class="form-check-label" for="longTermRadio">Long-Term Supplemental</label>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-4" id="exempt">
+                  <h5>Exempt?</h5>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="yesRadio" value="option1">
+                      <label class="form-check-label" for="yesRadio">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="noRadio" value="option2">
+                      <label class="form-check-label" for="noRadio">No</label>
+                  </div>
+                </div>
+              </div>
+                <hr>
+              <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="amount">Amount</label>
+                    <input type="text" class="form-control" id="amount" aria-describedby="amountHelp" placeholder="Enter amount">
+                </div>
+                <div class="col-md-4">
+                  <label for="frequencyOptions">Frequency</label>
+                    <select class="form-control" id="frequencyOptions">
+                      <option>option 1</option>
+                      <option>option 2</option>
+                      <option>option 3</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary float-right mt-5">Convert</button>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="mt-3">Hourly Rate</p>
+                  <p class="mt-3">Daily Rate</p>
+                  <p class="mt-3">Weekly Rate</p>
+                  <p class="mt-3">Monthly Rate</p>
+                  <p class="mt-3">Annual Rate</p>
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control m-1" id="hourlyRate" aria-describedby="amountHelp" placeholder="Enter Hourly Rate">
+                  <input type="text" class="form-control m-1" id="dailyRate" aria-describedby="amountHelp" placeholder="Enter Daily Rate">
+                  <input type="text" class="form-control m-1" id="weeklyRate" aria-describedby="amountHelp" placeholder="Enter Weekly Rate">
+                  <input type="text" class="form-control m-1" id="monthlyRate" aria-describedby="amountHelp" placeholder="Enter Monthly Rate">
+                  <input type="text" class="form-control m-1" id="annualRate" aria-describedby="amountHelp" placeholder="Enter Annual Rate">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Prorate</button>
+              <button type="button" class="btn btn-primary">Clear</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Exit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- validation modal -->
+<div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-labelledby="validationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="validationModalLabel">Sales Plan Validation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="col col-md-5">
+                      <p class="mb-4">Reference Salary</p>
+                      <p class="mb-4">Base Salary</p>
+                      <p class="mb-4">Incentives</p>
+                      <p class="mb-4">On Target Earnings</p>
+                    </div>
+                    <div class="col col-md-7">
+                      <input type="text" class="form-control mb-2" id="referenceSalary" name="refSalary">
+                      <input type="text" class="form-control mb-2" id="baseSalary" name="baseSalary">
+                      <input type="text" class="form-control mb-2" id="incentives" name="incentives">
+                      <input type="text" class="form-control mb-2" id="onTarget" name="onTarget">
+                    </div>
+                </div>
+            </div> <!--end modal-body-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Validate</button>
+                <button type="reset" class="btn btn-primary">Clear</button>                            
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- university modal -->
+<div class="modal fade" id="universityModal" tabindex="-1" role="dialog" aria-labelledby="universityModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="universityModalLabel">University Rates</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-row">
+                <h5>Degree or Program</h5>
+                <select id="degreeOrProgram" class="form-control mb-2">
+                </select>
+                <button type="button" class="btn btn-primary mb-1">Calculate</button>
+              </div>
+              <hr>
+              <div class="row justify-content-end">
+                <div class="col col-md-4"><h6>Minimum</h6></div>
+                <div class="col col-md-4"><h6>Maximun</h6></div>
+              </div>
+              <div class="row">
+                <div class="col col-md-4">
+                  <p class="mb-4">Regional</p>
+                  <p class="mb-4">National</p>
+                  <p class="mb-4">Premium</p>
+                </div>
+                <div class="col col-md-4">
+                  <input type="text" class="form-control mb-1" id="regionalMin">
+                  <input type="text" class="form-control mb-1" id="nationalMin">
+                  <input type="text" class="form-control mb-1" id="premiumMin">
+                </div>
+                <div class="col col-md-4">
+                  <input type="text" class="form-control mb-1" id="regionalMax">
+                  <input type="text" class="form-control mb-1" id="nationallMax">
+                  <input type="text" class="form-control mb-1" id="premiumlMax">
+                </div>
+              </div>
+            </div><!--end modal-body-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Make Exempt</button>
+              <button type="button" class="btn btn-primary">Make Non-Exempt</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>          
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- link to js file -->
+    <script type="text/javascript" src="js/home.js"></script>
+</body>
+
+</html>
